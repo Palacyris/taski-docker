@@ -9,7 +9,7 @@ DEBUG = os.getenv('DEBUG', True)
 
 ALLOWED_HOSTS = os.getenv(
     'ALLOWED_HOSTS',
-    '127.0.0.1, kittygram-kirrogath.chickenkiller.com'
+    '127.0.0.1, taskiez.hopto.org'
 ).split(', ')
 
 INSTALLED_APPS = [
