@@ -1,31 +1,31 @@
 version: '3'
 
 volumes:
-  pg_data_production:
+  pg_data_prod:
   static_volume:
 
 services:
   db:
-    container_name: taski_pg_db_prod
+    container_name: taski_db_prod
     image: postgres:13.10
     env_file: .env
     volumes:
-      - pg_data_production:/var/lib/postgresql/data
+      - pg_data_prod:/var/lib/postgresql/data
   backend:
-    container_name: taski_backend_prod
+    container_name: taski_back_prod
     image: palacyris/taski_backend
     env_file: .env
     volumes:
       - static_volume:/backend_static
   frontend:
-    container_name: taski_frontend_prod
+    container_name: taski_front_prod
     image: palacyris/taski_frontend
     env_file: .env
     command: cp -r /app/build/. /frontend_static/
     volumes:
       - static_volume:/frontend_static
   gateway:
-    container_name: taski_gateway_prod
+    container_name: taski_nginx_prod
     image: palacyris/taski_gateway
     env_file: .env
     volumes:

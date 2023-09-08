@@ -9,7 +9,7 @@ DEBUG = os.getenv('DEBUG', 'True') == 'True'
 
 ALLOWED_HOSTS = os.getenv(
     'ALLOWED_HOSTS',
-    '127.0.0.1, taskiez.hopto.org'
+    '127.0.0.1, localhost, taskiez.hopto.org'
 ).split(', ')
 
 INSTALLED_APPS = [
